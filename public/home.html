@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="styles.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WonderBoard</title>
+	</head>
+	<body>
+		<img class="banner" src="banner.png" />
+		<div class="main">
+			<div class="side-bar">
+				<div class="side-bar__login">
+					<form>
+						<div>
+							<label for="id">ID</label>
+							<input
+								id="id"
+								type="text"
+								placeholder="ID"
+								class="side-bar__login__id"
+							/>
+						</div>
+						<div>
+							<label for="pw">PW</label>
+							<input
+								id="pw"
+								type="password"
+								placeholder="PW"
+								class="side-bar__login__pw"
+							/>
+						</div>
+						<button class="side-bar__login__btn">Login</button>
+					</form>
+				</div>
+				<button class="side-bar__write">글쓰기</button>
+				<div class="side-bar__search">
+					<form>
+						<input placeholder="Search..." type="text" />
+						<button class="side-bar__search__btn">Search</button>
+					</form>
+				</div>
+				<div class="side-bar__board-list">
+					<ul>
+						<li>자유게시판</li>
+						<li>공략게시판</li>
+						<li>홍보게시판</li>
+						<li>구인게시판</li>
+					</ul>
+				</div>
+			</div>
+			<div class="boards">
+				<div class="boards__row">
+					<div class="boards__board">
+						<div class="boards__board__title">
+							<h1 class="boards__board__title__category">
+								자유게시판
+							</h1>
+							<span clas="boards__board__title__more"
+								>더보기</span
+							>
+						</div>
+						<div class="boards__board__content">
+							<ul>
+								<li>abcd</li>
+								<li>abcd</li>
+								<li>abcd</li>
+								<li>abcd</li>
+							</ul>
+						</div>
+					</div>
+					<div class="boards__board">
+						<div class="boards__board__title">
+							<h1 class="boards__board__title__category">
+								공략게시판
+							</h1>
+							<span clas="boards__board__title__more"
+								>더보기</span
+							>
+						</div>
+						<div class="boards__board__content">
+							<ul>
+								<li>abcd</li>
+								<li>abcd</li>
+								<li>abcd</li>
+								<li>abcd</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="boards__row">
+					<div class="boards__board">
+						<div class="boards__board__title">
+							<h1 class="boards__board__title__category">
+								홍보게시판
+							</h1>
+							<span clas="boards__board__title__more"
+								>더보기</span
+							>
+						</div>
+						<div class="boards__board__content">
+							<ul>
+								<li>abcd</li>
+								<li>abcd</li>
+								<li>abcd</li>
+								<li>abcd</li>
+							</ul>
+						</div>
+					</div>
+					<div class="boards__board">
+						<div class="boards__board__title">
+							<h1 class="boards__board__title__category">
+								구인게시판
+							</h1>
+							<span clas="boards__board__title__more"
+								>더보기</span
+							>
+						</div>
+						<div class="boards__board__content">
+							<ul>
+								<li>abcd</li>
+								<li>abcd</li>
+								<li>abcd</li>
+								<li>abcd</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+@import "reset.css";
+
+/* Components */
+@import "components/banner.css";
+@import "components/sidebar.css";
+
+/* Screens */
+@import "screens/home.css";
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	display: flex;
+}

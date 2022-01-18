@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="styles.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WonderBoard</title>
+	</head>
+	<body>
+		<img class="banner" src="banner.png" />
+		<div class="side-bar">
+			<div class="side-bar__login">
+				<form>
+					<label for="id">ID</label>
+					<input
+						id="id"
+						type="text"
+						placeholder="ID"
+						class="side-bar__login__id"
+					/>
+					<label for="pw">PW</label>
+					<input
+						id="pw"
+						type="password"
+						placeholder="PW"
+						class="side-bar__login__pw"
+					/>
+					<button class="side-bar__login__btn">Login</button>
+				</form>
+			</div>
+			<button class="side-bar__write">글쓰기</button>
+			<div class="side-bar__search">
+				<form>
+					<input placeholder="Search..." type="text" />
+					<button class="side-bar__search__btn">Search</button>
+				</form>
+			</div>
+			<div class="side-bar__board-list">
+				<ul>
+					<li>자유게시판</li>
+					<li>공략게시판</li>
+					<li>홍보게시판</li>
+					<li>구인게시판</li>
+				</ul>
+			</div>
+		</div>
+		<div class="write">
+			<form>
+				<label for="title">제목</label>
+				<input id="title" class="write__title" type="text" />
+				<textarea class="write__body" placeholder="본문..."></textarea>
+				<div class="write__footer">
+					<select>
+						<option value="1">자유게시판</option>
+						<option value="2">공략게시판</option>
+						<option value="3">홍보게시판</option>
+						<option value="4">구인게시판</option>
+					</select>
+					<button class="write__btn">Submit</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

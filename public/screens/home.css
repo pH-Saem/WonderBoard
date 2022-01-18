@@ -1,0 +1,25 @@
+.boards {
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.boards__row {
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.boards__board {
+	width: 100%;
+	margin: 5px;
+	padding: 5px;
+}
+
+.boards__board__title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
