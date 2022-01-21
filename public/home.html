@@ -8,46 +8,30 @@
 	</head>
 	<body>
 		<img class="banner" src="banner.png" />
-		<div class="main">
+		<main>
 			<div class="side-bar">
-				<div class="side-bar__login">
-					<form>
-						<div>
-							<label for="id">ID</label>
-							<input
-								id="id"
-								type="text"
-								placeholder="ID"
-								class="side-bar__login__id"
-							/>
-						</div>
-						<div>
-							<label for="pw">PW</label>
-							<input
-								id="pw"
-								type="password"
-								placeholder="PW"
-								class="side-bar__login__pw"
-							/>
-						</div>
-						<button class="side-bar__login__btn">Login</button>
-					</form>
-				</div>
+				<form class="side-bar__login">
+					<div class="side-bar__login__input">
+						<label for="id">ID</label>
+						<input id="id" type="text" placeholder="ID" />
+					</div>
+					<div class="side-bar__login__input">
+						<label for="pw">PW</label>
+						<input id="pw" type="password" placeholder="PW" />
+					</div>
+					<button class="side-bar__login__btn">Login</button>
+				</form>
 				<button class="side-bar__write">글쓰기</button>
-				<div class="side-bar__search">
-					<form>
-						<input placeholder="Search..." type="text" />
-						<button class="side-bar__search__btn">Search</button>
-					</form>
-				</div>
-				<div class="side-bar__board-list">
-					<ul>
-						<li>자유게시판</li>
-						<li>공략게시판</li>
-						<li>홍보게시판</li>
-						<li>구인게시판</li>
-					</ul>
-				</div>
+				<form class="side-bar__search">
+					<input placeholder="Search..." type="text" />
+					<button class="side-bar__search__btn">Search</button>
+				</form>
+				<ul class="side-bar__board-list">
+					<li>자유게시판</li>
+					<li>공략게시판</li>
+					<li>홍보게시판</li>
+					<li>구인게시판</li>
+				</ul>
 			</div>
 			<div class="boards">
 				<div class="boards__row">
@@ -60,14 +44,12 @@
 								>더보기</span
 							>
 						</div>
-						<div class="boards__board__content">
-							<ul>
-								<li>abcd</li>
-								<li>abcd</li>
-								<li>abcd</li>
-								<li>abcd</li>
-							</ul>
-						</div>
+						<ul class="boards__board__content">
+							<li><span>abcd</span><span>1994.24.15</span></li>
+							<li><span>abcd</span><span>1994.24.15</span></li>
+							<li><span>abcd</span><span>1994.24.15</span></li>
+							<li><span>abcd</span><span>1994.24.15</span></li>
+						</ul>
 					</div>
 					<div class="boards__board">
 						<div class="boards__board__title">
@@ -127,6 +109,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</main>
 	</body>
 </html>

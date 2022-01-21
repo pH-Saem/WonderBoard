@@ -1,0 +1,29 @@
+.board {
+	min-width: 80%;
+	justify-content: center;
+	margin-left: 10px;
+}
+
+.board__title {
+	font-weight: bold;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.board__content {
+	border: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+	height: 80%;
+	margin: 10px 0px;
+	padding: 10px;
+}
+
+.board__pagenum {
+	display: flex;
+	justify-content: center;
+}
+
+.board__pagenum > span {
+	margin-right: 5px;
+}

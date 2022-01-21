@@ -1,0 +1,23 @@
+.content {
+	width: 80%;
+}
+
+.content__title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.content__title > h1 {
+	font-weight: bold;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.content__body {
+	border: 1px solid gray;
+	padding: 5px;
+	height: 80%;
+	margin-bottom: 5px;
+}

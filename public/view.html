@@ -8,52 +8,42 @@
 	</head>
 	<body>
 		<img class="banner" src="banner.png" />
-		<div class="side-bar">
-			<div class="side-bar__login">
-				<form>
-					<label for="id">ID</label>
-					<input
-						id="id"
-						type="text"
-						placeholder="ID"
-						class="side-bar__login__id"
-					/>
-					<label for="pw">PW</label>
-					<input
-						id="pw"
-						type="password"
-						placeholder="PW"
-						class="side-bar__login__pw"
-					/>
+		<main>
+			<div class="side-bar">
+				<form class="side-bar__login">
+					<div class="side-bar__login__input">
+						<label for="id">ID</label>
+						<input id="id" type="text" placeholder="ID" />
+					</div>
+					<div class="side-bar__login__input">
+						<label for="pw">PW</label>
+						<input id="pw" type="password" placeholder="PW" />
+					</div>
 					<button class="side-bar__login__btn">Login</button>
 				</form>
-			</div>
-			<button class="side-bar__write">글쓰기</button>
-			<div class="side-bar__search">
-				<form>
+				<button class="side-bar__write">글쓰기</button>
+				<form class="side-bar__search">
 					<input placeholder="Search..." type="text" />
 					<button class="side-bar__search__btn">Search</button>
 				</form>
-			</div>
-			<div class="side-bar__board-list">
-				<ul>
+				<ul class="side-bar__board-list">
 					<li>자유게시판</li>
 					<li>공략게시판</li>
 					<li>홍보게시판</li>
 					<li>구인게시판</li>
 				</ul>
 			</div>
-		</div>
-		<div class="content">
-			<div class="content__title">
-				<h1>제목</h1>
-				<span>2022.01.18 Gail</span>
+			<div class="content">
+				<div class="content__title">
+					<h1>제목</h1>
+					<span>2022.01.18 Gail</span>
+				</div>
+				<div class="content__body">blahblahblah</div>
+				<div class="content__btns">
+					<button>수정</button>
+					<button>삭제</button>
+				</div>
 			</div>
-			<div>blahblahblah</div>
-			<div class="content__btns">
-				<button>수정</button>
-				<button>삭제</button>
-			</div>
-		</div>
+		</main>
 	</body>
 </html>

@@ -10,7 +10,7 @@
 		<img class="banner" src="banner.png" />
 		<main>
 			<div class="side-bar">
-				<form class="side-bar__login">
+				<form class="side-bar__login hide">
 					<div class="side-bar__login__input">
 						<label for="id">ID</label>
 						<input id="id" type="text" placeholder="ID" />
@@ -21,7 +21,13 @@
 					</div>
 					<button class="side-bar__login__btn">Login</button>
 				</form>
-				<button class="side-bar__write">글쓰기</button>
+				<div class="side-bar__account">
+					<div>
+						<span>사용자</span>
+						<span>로그아웃</span>
+					</div>
+					<button class="side-bar__write">글쓰기</button>
+				</div>
 				<form class="side-bar__search">
 					<input placeholder="Search..." type="text" />
 					<button class="side-bar__search__btn">Search</button>
@@ -32,19 +38,6 @@
 					<li>홍보게시판</li>
 					<li>구인게시판</li>
 				</ul>
-			</div>
-			<div class="board">
-				<h1 class="board__title">자유게시판</h1>
-				<div class="board__content">
-					<span>자유</span>
-					<span>free</span>
-					<span>freedom</span>
-				</div>
-				<div class="board__pagenum">
-					<span>1</span>
-					<span>2</span>
-					<span>3</span>
-				</div>
 			</div>
 		</main>
 	</body>
