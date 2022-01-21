@@ -1,0 +1,62 @@
+.side-bar {
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	padding-right: 8px;
+	margin-right: 2px;
+	margin-left: 10px;
+	border-right: 1px solid gray;
+}
+
+.side-bar__login {
+	margin-bottom: 5px;
+}
+
+.side-bar__login__input {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.side-bar__login__input > input {
+	width: 210px;
+}
+
+.side-bar__write {
+	margin-bottom: 5px;
+}
+
+.side-bar__search {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.side-bar__search > input {
+	width: 180px;
+	margin-right: 5px;
+}
+
+.side-bar__account {
+	width: 240px;
+	height: 100px;
+	border: 1px solid gray;
+	padding: 5px;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.side-bar__account > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.hide {
+	display: none;
+}

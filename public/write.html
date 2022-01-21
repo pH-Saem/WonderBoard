@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="../css/styles.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WonderBoard</title>
+	</head>
+	<body>
+		<img class="banner" src="banner.png" />
+		<main>
+			<div class="side-bar">
+				<form
+					class="side-bar__login"
+					action="C:/Users/Saem/Desktop/GitHub/WonderBoard/public/home.html"
+				>
+					<div class="side-bar__login__input">
+						<label for="id">ID</label>
+						<input id="id" type="text" name="id" placeholder="ID" />
+					</div>
+					<div class="side-bar__login__input">
+						<label for="pw">PW</label>
+						<input
+							id="pw"
+							type="password"
+							name="pw"
+							placeholder="PW"
+						/>
+					</div>
+					<button class="side-bar__login__btn">Login</button>
+				</form>
+				<button class="side-bar__write">글쓰기</button>
+				<form class="side-bar__search">
+					<input placeholder="Search..." type="text" />
+					<button class="side-bar__search__btn">Search</button>
+				</form>
+				<ul class="side-bar__board-list">
+					<li>자유게시판</li>
+					<li>공략게시판</li>
+					<li>홍보게시판</li>
+					<li>구인게시판</li>
+				</ul>
+			</div>
+			<form class="write">
+				<div class="write__title">
+					<label for="title">제목</label>
+					<input id="title" type="text" />
+				</div>
+				<textarea class="write__body" placeholder="본문..."></textarea>
+				<div class="write__footer">
+					<select>
+						<option value="1">자유게시판</option>
+						<option value="2">공략게시판</option>
+						<option value="3">홍보게시판</option>
+						<option value="4">구인게시판</option>
+					</select>
+					<button class="write__btn">Submit</button>
+				</div>
+			</form>
+		</main>
+	</body>
+</html>

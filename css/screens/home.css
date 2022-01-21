@@ -1,0 +1,43 @@
+.boards {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	margin-right: 10px;
+}
+
+.boards__row {
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.boards__board {
+	width: 100%;
+	margin: 5px;
+	padding: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.boards__board__title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.boards__board__content {
+	display: flex;
+	flex-direction: column;
+	height: 85%;
+}
+
+.boards__board__content > li {
+	margin-bottom: 10px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
