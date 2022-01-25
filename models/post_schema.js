@@ -14,10 +14,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false
         },
-        post_category: {
-            type: DataTypes.STRING(10),
-            allowNull: false
-        },
         post_content: {
             type: DataTypes.TEXT
         }
@@ -30,6 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     Post.associate = function(models) {
         models.Post.belongsTo(models.Member, {
             foreignKey: "post_writer"
+        });
+        models.Post.belongsTo(models.Board, {
+            foreignKey: "post_category"
         });
     };
 
