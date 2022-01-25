@@ -19,6 +19,16 @@
 	padding: 10px;
 }
 
+.board__content__row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.board__content__row :first-child {
+	width: 70%;
+}
+
 .board__pagenum {
 	display: flex;
 	justify-content: center;
