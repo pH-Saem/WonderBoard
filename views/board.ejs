@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>WonderBoard</title>
@@ -34,11 +34,15 @@
 				</ul>
 			</div>
 			<div class="board">
-				<h1 class="board__title">자유게시판</h1>
+				<h1 class="board__title"><%= board_name %></h1>
 				<div class="board__content">
-					<span>자유</span>
-					<span>free</span>
-					<span>freedom</span>
+					<% for(let i = 0; i < 5; i++) {%>
+					<div class="board__content__row">
+						<span><%= data[i].post_title%></span>
+						<span><%= data[i].post_date%></span>
+						<span><%= data[i].post__writer%></span>
+					</div>
+					<% } %>
 				</div>
 				<div class="board__pagenum">
 					<span>1</span>

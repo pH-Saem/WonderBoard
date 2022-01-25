@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="/css/styles.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WonderBoard</title>
+	</head>
+	<body>
+		<img class="banner" src="banner.png" />
+		<main>
+			<div class="side-bar">
+				<form class="side-bar__login">
+					<div class="side-bar__login__input">
+						<label for="id">ID</label>
+						<input id="id" type="text" placeholder="ID" />
+					</div>
+					<div class="side-bar__login__input">
+						<label for="pw">PW</label>
+						<input id="pw" type="password" placeholder="PW" />
+					</div>
+					<button class="side-bar__login__btn">Login</button>
+				</form>
+				<button class="side-bar__write">글쓰기</button>
+				<form class="side-bar__search">
+					<input placeholder="Search..." type="text" />
+					<button class="side-bar__search__btn">Search</button>
+				</form>
+				<ul class="side-bar__board-list">
+					<% for (let i = 0; i < data.length; i++) { %>
+					<li><%= data[i].board_name %></li>
+					<% } %>
+				</ul>
+			</div>
+			<div class="boards">
+				<% for (i = 0; i < data.length; i++) { %> <% if (i%2 === 0) { %>
+				<div class="boards__row">
+					<% } %>
+					<div class="boards__board">
+						<div class="boards__board__title">
+							<h1 class="boards__board__title__category">
+								<%= data[i].board_name %>
+							</h1>
+							<span clas="boards__board__title__more"
+								>더보기</span
+							>
+						</div>
+						<ul class="boards__board__content">
+							<% for (let j = 0; j < 4; j++) { %>
+							<li>
+								<span><%= data[i].posts[j].post_title %></span
+								><span><%= data[i].posts[j].post_date %></span>
+							</li>
+							<% } %>
+						</ul>
+					</div>
+					<% if (i%2 === 1) { %>
+				</div>
+				<% } %> <% } %>
+			</div>
+		</main>
+	</body>
+</html>
