@@ -27,6 +27,15 @@
 	margin-bottom: 20px;
 }
 
+.boards__board__title__category {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.boards__board__title__more {
+	color: rgba(0, 0, 0, 0.6);
+}
+
 .boards__board__content {
 	display: flex;
 	flex-direction: column;
@@ -40,4 +49,5 @@
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
+	font-size: 14px;
 }

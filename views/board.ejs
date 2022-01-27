@@ -7,7 +7,7 @@
 		<title>WonderBoard</title>
 	</head>
 	<body>
-		<img class="banner" src="banner.png" />
+		<img class="banner" src="/banner.png" />
 		<main>
 			<div class="side-bar">
 				<form class="side-bar__login">
@@ -27,16 +27,16 @@
 					<button class="side-bar__search__btn">Search</button>
 				</form>
 				<ul class="side-bar__board-list">
-					<li>자유게시판</li>
-					<li>공략게시판</li>
-					<li>홍보게시판</li>
-					<li>구인게시판</li>
+					<% for (let i = 0; i < boards.length; i++) { let
+					url='/board/'+i; %>
+					<li><a href="<%= url%>"><%= boards[i].board_name %></a></li>
+					<% } %>
 				</ul>
 			</div>
 			<div class="board">
-				<h1 class="board__title"><%= board_name %></h1>
+				<h1 class="board__title"><%= boards[category].board_name %></h1>
 				<div class="board__content">
-					<% for(let i = 0; i < 5; i++) {%>
+					<% for(let i = 0; i < data.length; i++) {%>
 					<div class="board__content__row">
 						<span><%= data[i].post_title%></span>
 						<span><%= data[i].post_date%></span>

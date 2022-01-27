@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>WonderBoard</title>
 	</head>
 	<body>
-		<img class="banner" src="banner.png" />
+		<img class="banner" src="/banner.png" />
 		<main>
 			<div class="side-bar">
 				<form class="side-bar__login">
@@ -27,18 +27,18 @@
 					<button class="side-bar__search__btn">Search</button>
 				</form>
 				<ul class="side-bar__board-list">
-					<li>자유게시판</li>
-					<li>공략게시판</li>
-					<li>홍보게시판</li>
-					<li>구인게시판</li>
+					<% for (let i = 0; i < data.length; i++) { let
+					url='/board/'+i; %>
+					<li><a href="<%= url%>"><%= data[i].board_name %></a></li>
+					<% } %>
 				</ul>
 			</div>
 			<div class="content">
 				<div class="content__title">
-					<h1>제목</h1>
-					<span>2022.01.18 Gail</span>
+					<h1><%= data.post_title %></h1>
+					<span><%= data.post_date %> <%= data.post_writer %></span>
 				</div>
-				<div class="content__body">blahblahblah</div>
+				<div class="content__body"><%= data.post_content %></div>
 				<div class="content__btns">
 					<button>수정</button>
 					<button>삭제</button>
