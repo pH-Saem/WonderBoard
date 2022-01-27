@@ -7,7 +7,7 @@
 		<title>WonderBoard</title>
 	</head>
 	<body>
-		<img class="banner" src="banner.png" />
+		<img class="banner" src="/banner.png" />
 		<main>
 			<div class="side-bar">
 				<form class="side-bar__login">
@@ -27,31 +27,43 @@
 					<button class="side-bar__search__btn">Search</button>
 				</form>
 				<ul class="side-bar__board-list">
-					<% for (let i = 0; i < data.length; i++) { %>
-					<li><%= data[i].board_name %></li>
+					<% for (let i = 0; i < boards.length; i++) { let
+					url='/board/'+i; %>
+					<li><a href="<%= url%>"><%= boards[i].board_name %></a></li>
 					<% } %>
 				</ul>
 			</div>
 			<div class="boards">
-				<% for (i = 0; i < data.length; i++) { %> <% if (i%2 === 0) { %>
+				<% for (i = 0; i < boards.length; i++) { url = '/board/'+i;%> <%
+				if (i%2 === 0) { %>
 				<div class="boards__row">
 					<% } %>
 					<div class="boards__board">
 						<div class="boards__board__title">
 							<h1 class="boards__board__title__category">
-								<%= data[i].board_name %>
+								<a href="<%= url %>">
+									<%= boards[i].board_name %>
+								</a>
 							</h1>
-							<span clas="boards__board__title__more"
-								>더보기</span
-							>
+							<a href="<%= url %>">
+								<span class="boards__board__title__more">
+									더보기
+								</span>
+							</a>
 						</div>
 						<ul class="boards__board__content">
-							<% for (let j = 0; j < 4; j++) { %>
+							<% for (let j = 0; j < posts.length; j++) { %> <%url
+							='/view/'+ posts[j].post_ID; %> <% if (
+							posts[j].post_category === i) { %>
 							<li>
-								<span><%= data[i].posts[j].post_title %></span
-								><span><%= data[i].posts[j].post_date %></span>
+								<span>
+									<a href="<%= url %>">
+										<%= posts[j].post_title %>
+									</a>
+								</span>
+								<span> <%= posts[j].post_date %> </span>
 							</li>
-							<% } %>
+							<% } %> <% } %>
 						</ul>
 					</div>
 					<% if (i%2 === 1) { %>
