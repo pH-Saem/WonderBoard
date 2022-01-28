@@ -10,17 +10,22 @@
 		<img class="banner" src="/banner.png" />
 		<main>
 			<div class="side-bar">
-				<form class="side-bar__login">
-					<div class="side-bar__login__input">
-						<label for="id">ID</label>
-						<input id="id" type="text" placeholder="ID" />
-					</div>
-					<div class="side-bar__login__input">
-						<label for="pw">PW</label>
-						<input id="pw" type="password" placeholder="PW" />
-					</div>
-					<button class="side-bar__login__btn">Login</button>
-				</form>
+				<form class="side-barlogin" action="/login" method="post">
+                    <div class="side-barlogininput">
+                        <label for="id">ID</label>
+                        <input name="id" id="id" type="text" placeholder="ID" />
+                    </div>
+                    <div class="side-barlogininput">
+                        <label for="pw">PW</label>
+                        <input
+                            name="pw"
+                            id="pw"
+                            type="password"
+                            placeholder="PW"
+                        />
+                    </div>
+                    <button class="side-barlogin__btn">Login</button>
+                </form>
 				<button class="side-bar__write">글쓰기</button>
 				<form class="side-bar__search">
 					<input placeholder="Search..." type="text" />
