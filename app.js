@@ -19,6 +19,7 @@ const db = mysql.createConnection({
 	password: 'potato',
 	database: 'database_development',
 	multipleStatements: true,
+	dateStrings: 'date',
 	debug: false,
 });
 
@@ -29,20 +30,6 @@ app.use(express.static(__dirname + '/public'));
 // POST 방식으로 받은 요청의 body 확인을 위한 파싱
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-app.use((req, res, next) => {
-	console.log('BodyParser Test');
-
-	const paramID = req.body.id || req.query.id;
-	const paramPW = req.body.pw || req.query.pw;
-
-	console.log(`ID : ${paramID} PW : ${paramPW}`);
-	next();
-});
-
-router.use((req, res, next) => {
-	next();
-});
 
 router.get('/', (req, res) => {
 	if(req.user)
@@ -96,6 +83,33 @@ router.get('/view/:num', (req, res) => {
 	});
 });
 
+
+router.get('/write', (req, res) => {
+	const sql = 'SELECT * FROM board_table;';
+	db.query(sql, (err, results) => {
+		console.log(results);
+		res.render('write', { boards: results });
+	});
+});
+
+router.post('/write', (req, res) => {
+	console.log(req.body.title, req.body.body, req.body.board);
+	// post_ID, post_date : DB에서 생성, post_writer : session
+	let sql =
+		'INSERT INTO post_table(post_title, post_content, post_category, post_writer) VALUES(?,?,?,?)';
+	const item = [req.body.title, req.body.body, req.body.board, 'LEA'];
+	sql = mysql.format(sql, item);
+	console.log(sql);
+	db.query(sql, (err, result) => {
+		if (result.affectedRows > 0) {
+			console.log('post inserted');
+		} else {
+			console.log('insert err');
+		}
+		const postID = result.insertId;
+		res.redirect('/view/' + postID);
+	});
+});
 
 router.post('/login', passport.authenticate('local', {
 	failureRedirect: '/'

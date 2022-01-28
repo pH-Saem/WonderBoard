@@ -1,5 +1,5 @@
 .write {
-	min-width: 80%;
+	width: 80vw;
 	margin-left: 10px;
 	display: flex;
 	flex-direction: column;
@@ -10,10 +10,11 @@
 }
 
 .write__title > input {
-	width: 95%;
+	width: 85%;
 }
 
 .write__body {
 	height: 80%;
+	width: 90%;
 	margin-bottom: 10px;
 }

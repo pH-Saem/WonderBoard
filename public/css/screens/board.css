@@ -1,5 +1,6 @@
 .board {
-	width: 100%;
+	width: 80vw;
+	height: 55vh;
 	justify-content: center;
 	margin-left: 10px;
 }
