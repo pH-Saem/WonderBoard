@@ -7,7 +7,9 @@ const app = express();
 const session = require('express-session');
 const passport = require('passport');
 const passportConfig = require('./passport');
-app.use(session({ secret: '비밀코드', resave: true, saveUninitialized: false })); // 세션 활성화
+app.use(
+	session({ secret: '비밀코드', resave: true, saveUninitialized: false })
+); // 세션 활성화
 app.use(passport.initialize()); // passport 구동
 app.use(passport.session()); // 세션 연결
 
@@ -16,7 +18,7 @@ passportConfig();
 const db = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: 'potato',
+	password: 'phsaem',
 	database: 'database_development',
 	multipleStatements: true,
 	dateStrings: 'date',
@@ -32,38 +34,42 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 router.get('/', (req, res) => {
-	if(req.user)
-	{
-		console.log("logged in");
-	}
-	else
-	{
-		console.log("not logged");
+	if (req.user) {
+		console.log('logged in');
+		/*
+		let sidebar = window.document.getElementsByClassName('side-bar__login');
+		sidebar.classList.add('hide');
+		let userInfo = window.document.getElementsByClassName('user');
+		userInfo.classList.remove('hide');
+		*/
+	} else {
+		console.log('not logged');
 	}
 	const sql1 = 'SELECT * FROM board_table;';
 	const sql2 =
 		'SELECT post_category, post_title, post_date, post_ID FROM post_table;';
 	db.query(sql1 + sql2, (err, results) => {
-		console.log(results);
-		res.render('home', { boards: results[0], posts: results[1] });
+		//console.log(results);
+		res.render('home', {
+			boards: results[0],
+			posts: results[1],
+			username: req.user ? req.user.member_name : null,
+		});
 	});
 });
 
 router.get('/board/:num', (req, res) => {
-	if(req.user)
-	{
-		console.log("logged in");
-	}
-	else
-	{
-		console.log("not logged");
+	if (req.user) {
+		console.log('logged in');
+	} else {
+		console.log('not logged');
 	}
 	const sql1 = 'SELECT * FROM board_table;';
 	const sql2 =
 		'SELECT post_title, post_date, post_ID FROM post_table WHERE post_category = ?;';
 	const sql = sql1 + mysql.format(sql2, req.params.num);
 	db.query(sql, (err, results) => {
-		console.log(results);
+		//console.log(results);
 		res.render('board', {
 			boards: results[0],
 			category: req.params.num,
@@ -76,18 +82,17 @@ router.get('/view/:num', (req, res) => {
 	const sql = 'SELECT * FROM post_table where post_id = ?';
 	db.query(sql, req.params.num, (err, result) => {
 		[post] = result;
-		console.log(post);
+		//console.log(post);
 		res.render('view', {
 			data: post,
 		});
 	});
 });
 
-
 router.get('/write', (req, res) => {
 	const sql = 'SELECT * FROM board_table;';
 	db.query(sql, (err, results) => {
-		console.log(results);
+		//console.log(results);
 		res.render('write', { boards: results });
 	});
 });
@@ -99,7 +104,7 @@ router.post('/write', (req, res) => {
 		'INSERT INTO post_table(post_title, post_content, post_category, post_writer) VALUES(?,?,?,?)';
 	const item = [req.body.title, req.body.body, req.body.board, 'LEA'];
 	sql = mysql.format(sql, item);
-	console.log(sql);
+	//console.log(sql);
 	db.query(sql, (err, result) => {
 		if (result.affectedRows > 0) {
 			console.log('post inserted');
@@ -111,12 +116,17 @@ router.post('/write', (req, res) => {
 	});
 });
 
-router.post('/login', passport.authenticate('local', {
-	failureRedirect: '/'
-  }), (req, res) => {
-	console.log(req.body.id, req.body.pw);
-	res.redirect('/');
-  });
+router.post(
+	'/login',
+	passport.authenticate('local', {
+		failureRedirect: '/',
+	}),
+	(req, res) => {
+		console.log(req.body.id, req.body.pw);
+
+		res.redirect('/');
+	}
+);
 
 app.set('views', 'views');
 app.set('view engine', 'ejs');

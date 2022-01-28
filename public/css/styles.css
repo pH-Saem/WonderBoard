@@ -21,3 +21,7 @@ main {
 	display: flex;
 	height: 100%;
 }
+
+.hide {
+	display: none;
+}
