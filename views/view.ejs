@@ -7,7 +7,7 @@
 		<title>WonderBoard</title>
 	</head>
 	<body>
-		<img class="banner" src="/banner.png" />
+		<a href="/"><img class="banner" src="/banner.png" /></a>
 		<main>
 			<div class="side-bar">
 				<form class="side-bar__login">
@@ -21,7 +21,12 @@
 					</div>
 					<button class="side-bar__login__btn">Login</button>
 				</form>
-				<button class="side-bar__write">글쓰기</button>
+				<button
+					class="side-bar__write"
+					onclick="location.href = '/write';"
+				>
+					글쓰기
+				</button>
 				<form class="side-bar__search">
 					<input placeholder="Search..." type="text" />
 					<button class="side-bar__search__btn">Search</button>

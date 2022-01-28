@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>WonderBoard</title>
 	</head>
 	<body>
-		<img class="banner" src="banner.png" />
+		<a href="/"><img class="banner" src="/banner.png" /></a>
 		<main>
 			<div class="side-bar">
-				<form
-					class="side-bar__login"
-					action="C:/Users/Saem/Desktop/GitHub/WonderBoard/public/home.html"
-				>
+				<form class="side-bar__login" action="/login" method="post">
 					<div class="side-bar__login__input">
 						<label for="id">ID</label>
-						<input id="id" type="text" name="id" placeholder="ID" />
+						<input name="id" id="id" type="text" placeholder="ID" />
 					</div>
 					<div class="side-bar__login__input">
 						<label for="pw">PW</label>
 						<input
+							name="pw"
 							id="pw"
 							type="password"
-							name="pw"
 							placeholder="PW"
 						/>
 					</div>
 					<button class="side-bar__login__btn">Login</button>
 				</form>
-				<button class="side-bar__write">글쓰기</button>
+				<button
+					class="side-bar__write"
+					onclick="location.href = '/write';"
+				>
+					글쓰기
+				</button>
 				<form class="side-bar__search">
 					<input placeholder="Search..." type="text" />
 					<button class="side-bar__search__btn">Search</button>
 				</form>
 				<ul class="side-bar__board-list">
-					<li>자유게시판</li>
-					<li>공략게시판</li>
-					<li>홍보게시판</li>
-					<li>구인게시판</li>
+					<% for (let i = 0; i < boards.length; i++) { let
+					url='/board/'+i; %>
+					<li><a href="<%= url%>"><%= boards[i].board_name %></a></li>
+					<% } %>
 				</ul>
 			</div>
-			<form class="write">
+			<form class="write" action="/write" method="post">
 				<div class="write__title">
 					<label for="title">제목</label>
-					<input id="title" type="text" />
+					<input name="title" id="title" type="text" />
 				</div>
-				<textarea class="write__body" placeholder="본문..."></textarea>
+				<textarea
+					name="body"
+					class="write__body"
+					placeholder="본문..."
+				></textarea>
 				<div class="write__footer">
-					<select>
-						<option value="1">자유게시판</option>
-						<option value="2">공략게시판</option>
-						<option value="3">홍보게시판</option>
-						<option value="4">구인게시판</option>
+					<select name="board">
+						<option value="0">자유게시판</option>
+						<option value="1">공략게시판</option>
+						<option value="2">홍보게시판</option>
+						<option value="3">구인게시판</option>
 					</select>
 					<button class="write__btn">Submit</button>
 				</div>
